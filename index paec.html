@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso Privado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background-color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0a84ff;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Inicio de sesión</h2>
+    <input type="text" id="username" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="login()">Ingresar</button>
+    <p id="error"></p>
+  </div>
+
+  <script>
+    // Lista de usuarios válidos (usuario: contraseña)
+    const usuarios = {
+      "usuario1": "clave123",
+      "admin": "admin123",
+      "jesus": "1234"
+    };
+
+    // URL de redirección si el login es exitoso
+    const redireccion = "https://www.ejemplo.com"; // Reemplaza con tu página
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      if (usuarios[user] === pass) {
+        window.location.href = redireccion;
+      } else {
+        error.textContent = "Usuario o contraseña incorrectos";
+      }
+    }
+  </script>
+</body>
+</html>
