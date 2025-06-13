@@ -62,7 +62,7 @@
     };
 
     // URL de redirección si el login es exitoso
-    const redireccion = https://images.app.goo.gl/169R92kewG6wMxBZA"; // Reemplaza con tu página
+    const redireccion = "https://cetis71.edu.mx/"
 
     function login() {
       const user = document.getElementById("username").value;
